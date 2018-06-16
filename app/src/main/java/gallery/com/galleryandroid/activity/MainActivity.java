@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         button = findViewById(R.id.button);
         recyclerView = findViewById(R.id.recyclerView);
-
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
         onClickOPenGallery();
