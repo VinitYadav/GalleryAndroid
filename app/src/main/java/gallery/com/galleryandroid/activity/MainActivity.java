@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
     private RecyclerView recyclerView;
-    private final int GALLERY = 1001;
+    private final int REQUEST_GALLERY = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == GALLERY && resultCode == RESULT_OK && data != null) {
+        if (requestCode == REQUEST_GALLERY && resultCode == RESULT_OK && data != null) {
             ArrayList<GalleryData> list = data.getParcelableArrayListExtra("list");
             setAdapter(list);
         }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
-                startActivityForResult(intent, GALLERY);
+                startActivityForResult(intent, REQUEST_GALLERY);
             }
         });
     }
